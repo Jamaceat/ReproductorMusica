@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script src="https://cdn.tailwindcss.com"></script>
+		<link rel="stylesheet" href="src/css/estilo.css" />
+		<link
+			rel="icon"
+			href="https://emojipedia-us.s3.amazonaws.com/source/microsoft-teams/337/musical-note_1f3b5.png"
+		/>
+
+		<title>Spoti 5</title>
+	</head>
+	<body class="bg-stone-900 text-slate-400 flex flex-col">
+		<div class="overflow-hidden">
+			<div
+				class="container mx-auto mt-8 w-5/5 lg:w-5/5 md:w-5/5 sm:w-5/5 rounded border-2 border-slate-400 text-stone-900 bg-slate-400 titulo primero min-w-mincontent overflow-hidden"
+			>
+				<div class="container m-10 sm rounded contenidos w-fit mx-auto">
+					<h1
+						class="text-2xl text-center md:text-7xl sm:text-4xl w-fit inline-block"
+					>
+						<span class="font-black">Spori</span>5
+						<span class="rounded bg-stone-900 pb-3 sm:min-w-2 object-cover"
+							>🎧</span
+						>
+					</h1>
+				</div>
+			</div>
+		</div>
+		<button
+			id="subirAudio"
+			class="mx-auto block contenido2 p-4 text-emerald-300 border-2 border-emerald-300 hover:text-stone-900 hover:bg-emerald-300 my-4"
+		>
+			Add song <span class="iconos subir"></span>
+		</button>
+
+		<form
+			id="subiendo"
+			class="container w-full mx-auto p-8 bg-amber-300 rounded flex flex-col"
+			action=""
+		>
+			<input
+				class="mx-auto w-50 pb-10 align-self-center text-stone-900 rounded"
+				type="file"
+				accept=".mp3,audio/*"
+			/>
+			<div class="flex flex-row justify-evenly">
+				<input
+					id="ncancion"
+					name="Song"
+					class="rounded text-stone-900 p-3"
+					placeholder="Song's Name"
+					type="text"
+				/>
+
+				<input
+					id="nauthor"
+					name="Author"
+					class="rounded text-stone-900 p-3"
+					placeholder="Author/s"
+					type="text"
+				/>
+			</div>
+			<div class="flex flex-row justify-center">
+				<input
+					type="submit"
+					class="cursor-pointer bg-stone-900 w-1/12 p-10 rounded align-self-center my-5 mx-3"
+					value="👍🏽"
+				/>
+
+				<button
+					id="cancelar"
+					class="cursor-pointer bg-stone-900 w-1/12 p-10 rounded align-self-center my-5 mx-3"
+				>
+					❌
+				</button>
+			</div>
+		</form>
+		<div class="sticky top-0 pt-2">
+			<!-- class="container w-full backdrop-blur-lg trans mx-auto contenido2 py-7 rounded" -->
+			<div
+				class="container mx-auto py-3 text-xs sm:text-2xl backdrop-blur-lg trans rounded md:text-base contenido"
+			>
+				<ul class="pegado">
+					<li class="w-1/4 top-0 border-r-2 border-slate-400 inline-block p-2">
+						Song
+					</li>
+					<li class="w-1/4 border-r-2 border-slate-400 inline-block p-2">
+						Author/Group
+					</li>
+					<li class="w-1/4 border-r-2 border-slate-400 inline-block p-2">
+						Duration
+					</li>
+					<li class="w-1/5 border-slate-400 inline-block p-2">Options</li>
+				</ul>
+			</div>
+		</div>
+		<div class="container mx-auto flex flex-col overflow-hidden">
+			<ul
+				class="flex flex-row flex-nowrap w-9/10 justify-center items-center py-4 m-3 rounded objeto"
+			>
+				<li class="pl-3 flex-grow w-1/4 text-ellipsis overflow-hidden">
+					Afterglow
+				</li>
+				<li class="pl-3 flex-grow w-1/4 text-ellipsis overflow-hidden">
+					Ed sheeran
+				</li>
+				<li class="pl-3 flex-grow w-1/4 text-ellipsis overflow-hidden">3:30</li>
+				<li class="pl-3 flex-grow w-1/4 text-center">
+					<button class="play rounded">
+						<span></span>
+					</button>
+					<button class="configurar rounded">
+						<span></span></button
+					><button class="eliminar rounded">
+						<span></span>
+					</button>
+				</li>
+			</ul>
+			<ul
+				class="flex flex-row flex-nowrap w-9/10 justify-center items-center py-4 m-3 rounded objeto"
+			>
+				<li class="pl-3 flex-grow w-1/4 text-ellipsis overflow-hidden">
+					Afterglowasda sdasdasdasdasd asdasd asdasdas dasdasdasdasdasdasdasd
+					asdasasdasdasdasdasdasdasdasdasdasdasdsadasdasdasdasdasd
+				</li>
+				<li class="pl-3 flex-grow w-1/4 text-ellipsis overflow-hidden">
+					Ed sheeran
+				</li>
+				<li class="pl-3 flex-grow w-1/4 text-ellipsis overflow-hidden">3:30</li>
+				<li class="pl-3 flex-grow w-1/4 text-center">
+					<button class="play rounded">
+						<span></span>
+					</button>
+					<button>
+						<span class="configurar rounded"></span></button
+					><button>
+						<span class="eliminar rounded"></span>
+					</button>
+				</li>
+			</ul>
+		</div>
+
+		<div class="barraEstado sticky bottom-0 py-2">
+			<div
+				class="container w-full backdrop-blur-lg trans mx-auto contenido py-7 rounded"
+			>
+				<div class="info"></div>
+				<div class="cancion">
+					<div class="botones"></div>
+					<div class="barra"></div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="src/script/script.js"></script>
+</html>

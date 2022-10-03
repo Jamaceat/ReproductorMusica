@@ -1,0 +1,176 @@
+@font-face {
+	font-family: "iconos";
+
+	src: url("../icons/fonts/icomoon.eot?uaf2dg");
+	src: url("../icons/fonts/icomoon.eot?uaf2dg#iefix")
+			format("embedded-opentype"),
+		url("../icons/fonts/icomoon.ttf?uaf2dg") format("truetype"),
+		url("../icons/fonts/icomoon.woff?uaf2dg") format("woff"),
+		url("../icons/fonts/icomoon.svg?uaf2dg#icomoon") format("svg");
+	font-weight: normal;
+	font-style: normal;
+	font-display: block;
+}
+
+.subir::after {
+	font-family: "iconos";
+	content: "\ea25";
+}
+.play::after {
+	font-family: "iconos";
+	margin: 1rem;
+	content: "\ea1c";
+}
+
+.configurar:hover,
+.play:hover,
+.eliminar:hover {
+	transition: all 0.25s;
+}
+
+.play:hover::before {
+	content: "Play";
+}
+
+.configurar:hover::before {
+	content: "Configure";
+}
+
+.eliminar:hover::before {
+	content: "Delete";
+}
+
+.toolplay,
+.toolconfigurar,
+.tooleliminar {
+	position: relative;
+}
+
+.isplay,
+.isconfigurar,
+.iseliminar {
+	display: none;
+}
+
+.toolplay:hover .isplay,
+.toolconfigurar:hover .isconfigurar,
+.tooleliminar:hover .iseliminar {
+	display: inline-block;
+	color: #1c1917;
+}
+
+/* .toolplay , toolconfigurar , tooleliminar {
+
+	
+} */
+
+.configurar:active,
+.play:active,
+.eliminar:active {
+	background-color: #1c1917;
+	padding: 10px 15px;
+	margin: 0 2px;
+	color: #94a3b8;
+	transition: all 0.05s;
+}
+
+.configurar::after {
+	font-family: "iconos";
+	margin: 1rem;
+	content: "\e994";
+}
+
+.eliminar::after {
+	font-family: "iconos";
+	margin: 1rem;
+	content: "\ea0f";
+}
+
+:root {
+	--azulito: #1d2838;
+}
+
+.titulo {
+	opacity: 0;
+	animation: reveal 1s forwards var(--delay);
+}
+
+.primero {
+	--delay: 0s;
+}
+
+.contenido {
+	backdrop-filter: blur(16px);
+	opacity: 0;
+	animation: reveal-reverse 1s forwards 1s;
+}
+
+.contenido2 {
+	/* backdrop-filter: blur(16px); */
+	opacity: 0;
+	animation: reveal-reverse 1s forwards 1.75s;
+}
+
+.contenidos {
+	/* backdrop-filter: blur(16px); */
+	opacity: 0;
+	animation: reveal-reverse 1s forwards 1s;
+}
+
+.contenido3 {
+	translate: 3000px 0;
+
+	animation: opaco 1s forwards;
+}
+/* .lista {
+	opacity: 0;
+	animation: reveal-reverse 1s forwards 1s;
+} */
+
+@keyframes reveal {
+	from {
+		translate: 200px 0;
+	}
+	to {
+		translate: none;
+		opacity: 1;
+	}
+}
+
+@keyframes reveal-reverse {
+	from {
+		opacity: 0;
+		translate: 0 100px;
+	}
+	to {
+		translate: none;
+		opacity: 1;
+	}
+}
+
+.trans {
+	background-color: #8197b86f;
+	backdrop-filter: blur(0);
+}
+@keyframes opaco {
+	from {
+		translate: 3000px 0;
+	}
+	to {
+		translate: none;
+	}
+}
+
+.objeto:hover {
+	background-color: #94a3b8;
+	color: #1c1917;
+	transition: all 0.75s;
+}
+
+.transicion {
+	transition: all 0.5;
+}
+
+#subiendo {
+	display: none;
+}
