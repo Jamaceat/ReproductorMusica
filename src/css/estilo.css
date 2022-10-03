@@ -168,9 +168,36 @@
 }
 
 .transicion {
-	transition: all 0.5;
+	width: 0;
+	opacity: 0;
+	height: 0;
+	animation: aparicion 1s forwards 0.25s;
 }
 
 #subiendo {
 	display: none;
 }
+
+@keyframes aparicion {
+	from {
+		width: 0;
+	}
+	to {
+		width: 100%;
+		opacity: 1;
+		height: 350px;
+	}
+}
+
+/* @keyframes desaparicion {
+	from {
+		width: 100%;
+		opacity: 1;
+		height: 45vh;
+	}
+	to {
+		width: 0;
+		opacity: 0;
+		height: 0;
+	}
+} */
