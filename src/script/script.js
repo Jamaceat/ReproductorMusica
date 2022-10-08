@@ -30,9 +30,26 @@ const agregarLista = () => {
 				ti.textContent = title
 				lista.innerHTML += agregando
 				playbuttons = document.querySelectorAll("#playButton")
+				deletebuttons = document.querySelectorAll("#deleteButton")
+				// Array.from(deletebuttons).forEach((x, i) => {
+				// 	x.parentElement.parentElement.textContent.trim() ===
+				// 	document.querySelector("#titleh4").textContent.trim()
+				// 		? (document.querySelector("#titleh4").textContent = "")
+				// 		: document.querySelector("#titleh4").textContent
+				// 	file = file.filter((x, id) => id != i)
+				// 	const eliminar = lista.children[i]
+				// 	lista.removeChild(eliminar)
+				// })
+
 				Array.from(playbuttons).forEach((x, i) => {
+					const title =
+						x.parentElement.parentElement.children[0].textContent.trim()
+					const author =
+						x.parentElement.parentElement.children[1].textContent.trim()
+
 					x.addEventListener("click", () => {
-						console.log("Funciona")
+						document.querySelector("#titleh4").textContent = title
+						reproductor.src = blob.createObjectURL(file[i])
 					})
 				})
 			}
