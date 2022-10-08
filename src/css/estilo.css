@@ -185,7 +185,7 @@
 	to {
 		width: 100%;
 		opacity: 1;
-		height: 350px;
+		height: 250px;
 	}
 }
 
@@ -201,3 +201,7 @@
 		height: 0;
 	}
 } */
+
+#reproductor {
+	background: none;
+}

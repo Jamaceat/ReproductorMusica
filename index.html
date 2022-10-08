@@ -4,6 +4,12 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/jsmediatags/3.9.5/jsmediatags.min.js"
+			integrity="sha512-YsR46MmyChktsyMMou+Bs74oCa/CDdwft7rJ5wlnmDzMj1mzqncsfJamEEf99Nk7IB0JpTMo5hS8rxB49FUktQ=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		></script>
 		<script src="https://cdn.tailwindcss.com"></script>
 		<link rel="stylesheet" href="src/css/estilo.css" />
 		<link
@@ -41,39 +47,26 @@
 			id="subiendo"
 			class="container w-full mx-auto p-8 bg-amber-300 rounded flex flex-col transicion"
 			action=""
+			method="post"
 		>
 			<input
+				id="newMusic"
 				class="mx-auto w-50 pb-10 align-self-center text-stone-900 rounded"
 				type="file"
-				accept=".mp3,audio/*"
+				accept=".mp3, .wav, audio/mpeg,audio/*"
 			/>
-			<div class="flex flex-row justify-evenly">
-				<input
-					id="ncancion"
-					name="Song"
-					class="rounded text-stone-900 p-3"
-					placeholder="Song's Name"
-					type="text"
-				/>
 
-				<input
-					id="nauthor"
-					name="Author"
-					class="rounded text-stone-900 p-3"
-					placeholder="Author/s"
-					type="text"
-				/>
-			</div>
 			<div class="flex flex-row justify-center">
 				<input
+					id="enviar"
 					type="submit"
-					class="cursor-pointer bg-stone-900 w-1/12 p-10 rounded align-self-center my-5 mx-3"
+					class="cursor-pointer bg-stone-900 w-1/12 p-3 rounded align-self-center my-5 mx-3 text-center"
 					value="👍🏽"
 				/>
 
 				<button
 					id="cancelar"
-					class="cursor-pointer bg-stone-900 w-1/12 p-10 rounded align-self-center my-5 mx-3"
+					class="cursor-pointer bg-stone-900 w-1/12 p-3 rounded align-self-center my-5 mx-3 text-center"
 				>
 					❌
 				</button>
@@ -98,7 +91,10 @@
 				</ul>
 			</div>
 		</div>
-		<div class="container mx-auto flex flex-col overflow-hidden">
+		<div
+			id="listaCanciones"
+			class="container mx-auto flex flex-col overflow-hidden"
+		>
 			<ul
 				class="flex flex-row flex-nowrap w-9/10 justify-center items-center py-4 m-3 rounded objeto"
 			>
@@ -113,9 +109,8 @@
 					<button class="play rounded">
 						<span></span>
 					</button>
-					<button class="configurar rounded">
-						<span></span></button
-					><button class="eliminar rounded">
+
+					<button class="eliminar rounded">
 						<span></span>
 					</button>
 				</li>
@@ -136,8 +131,6 @@
 						<span></span>
 					</button>
 					<button>
-						<span class="configurar rounded"></span></button
-					><button>
 						<span class="eliminar rounded"></span>
 					</button>
 				</li>
@@ -150,11 +143,13 @@
 			>
 				<div class="info"></div>
 				<div class="cancion">
+					<audio id="reproductor" src="" controls autoplay loop></audio>
 					<div class="botones"></div>
 					<div class="barra"></div>
 				</div>
 			</div>
 		</div>
 	</body>
+	<script src="src/script/item.js"></script>
 	<script src="src/script/script.js"></script>
 </html>
