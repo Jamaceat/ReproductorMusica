@@ -4,7 +4,7 @@ const cerrar = document.querySelector("#cancelar")
 const enviar = document.querySelector("#enviar")
 const newMusic = document.querySelector("#newMusic")
 const mediaTags = window.jsmediatags
-
+const reproductor = document.querySelector("#reproductor")
 // -------------------------------------------------------- URL musica
 
 var blob = window.URL || window.webkitURL
@@ -12,11 +12,28 @@ if (!blob) {
 	console.log("Your browser does not support Blob URLs :(")
 }
 
-newMusic.addEventListener("change", (event) => {
-	const file = event.target.files[0]
-	const reproductor = document.querySelector("#reproductor")
+const timerization = (seconds) => {
+	return `${Math.floor(seconds / 60)}:${
+		`${Math.floor(seconds % 60)}`.length > 1
+			? Math.floor(seconds % 60)
+			: `0${Math.floor(seconds % 60)}`
+	}`
+}
+
+const agregarMusica = (file) => {
 	const url = blob.createObjectURL(file)
 	reproductor.src = url
+}
+
+reproductor.addEventListener("canplay", (event) => {
+	console.log(reproductor.duration % 60)
+	console.log(timerization(reproductor.duration))
+})
+
+newMusic.addEventListener("change", (event) => {
+	const file = event.target.files[0]
+	const reproductor = agregarMusica(file)
+
 	mediaTags.read(file, {
 		onSuccess: function (tag) {
 			{
