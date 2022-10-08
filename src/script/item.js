@@ -10,10 +10,10 @@ const item = (title, author, duration) => {
     </li>\
     <li class=\"pl-3 flex-grow w-1/4 text-ellipsis overflow-hidden\">${duration}</li>\
     <li class=\"pl-3 flex-grow w-1/4 text-center\">\
-        <button class=\"play rounded\">\
+        <button id="playButton" class=\"play rounded\">\
             <span></span>\
         </button>\
-        <button>\
+        <button id="deleteButton">\
             <span class=\"eliminar rounded\"></span>\
         </button>\
     </li>\

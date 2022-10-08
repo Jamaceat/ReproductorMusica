@@ -24,11 +24,17 @@ const agregarLista = () => {
 	mediaTags.read(file[file.length - 1], {
 		onSuccess: function (tag) {
 			{
-				console.log(tag)
 				const {title, artist} = tag.tags
 				agregando = item(title, artist, timerization(reproductor.duration))
-				console.log(lista.innerHTML)
+				const ti = document.querySelector("#titleh4")
+				ti.textContent = title
 				lista.innerHTML += agregando
+				playbuttons = document.querySelectorAll("#playButton")
+				Array.from(playbuttons).forEach((x, i) => {
+					x.addEventListener("click", () => {
+						console.log("Funciona")
+					})
+				})
 			}
 		},
 		onError: function (error) {
