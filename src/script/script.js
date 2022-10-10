@@ -31,17 +31,10 @@ const agregarLista = () => {
 				lista.innerHTML += agregando
 				playbuttons = document.querySelectorAll("#playButton")
 				deletebuttons = document.querySelectorAll("#deleteButton")
-				// Array.from(deletebuttons).forEach((x, i) => {
-				// 	x.parentElement.parentElement.textContent.trim() ===
-				// 	document.querySelector("#titleh4").textContent.trim()
-				// 		? (document.querySelector("#titleh4").textContent = "")
-				// 		: document.querySelector("#titleh4").textContent
-				// 	file = file.filter((x, id) => id != i)
-				// 	const eliminar = lista.children[i]
-				// 	lista.removeChild(eliminar)
-				// })
 
 				Array.from(playbuttons).forEach((x, i) => {
+					console.log("Play index: ", i)
+
 					const title =
 						x.parentElement.parentElement.children[0].textContent.trim()
 					const author =
@@ -50,6 +43,7 @@ const agregarLista = () => {
 					x.addEventListener("click", () => {
 						document.querySelector("#titleh4").textContent = title
 						reproductor.src = blob.createObjectURL(file[i])
+						reproductor.play()
 					})
 				})
 			}

@@ -13,9 +13,6 @@ const item = (title, author, duration) => {
         <button id="playButton" class=\"play rounded\">\
             <span></span>\
         </button>\
-        <button id="deleteButton">\
-            <span class=\"eliminar rounded\"></span>\
-        </button>\
     </li>\
 </ul>`
 }
